@@ -18,14 +18,24 @@ import javax.swing.ImageIcon;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JCheckBox;
-import java.awt.Window.Type;
+
 
 public class Window {
 
 	private JFrame frame;
-	private JTextField textFieldPass;
-	private JTextField textFieldOnlySymbol;
-	private JTextField textFieldRequiredSymbol;
+	JTextField textFieldPass;
+	JTextField textFieldOnlySymbol;
+	JTextField textFieldRequiredSymbol;
+	JSpinner spinner = new JSpinner();
+	JCheckBox chckbxNumber = new JCheckBox("");
+	
+	/**
+	 * Action Listener
+	 */
+	
+	ActionButtGen actButtGen = new ActionButtGen(this);
+	ActionCopyBtn actCopyBtn = new ActionCopyBtn(this);
+	
 
 	/**
 	 * Launch the application.
@@ -55,6 +65,24 @@ public class Window {
 	 */
 	private void initialize() {
 		JPanel panel = new JPanel();
+		textFieldPass = new JTextField();
+		
+		JButton btnGeneration = new JButton("\u0413\u0435\u043D\u0435\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C");
+		btnGeneration.addActionListener(actButtGen);
+		
+		JButton btnCopy = new JButton("");
+		btnCopy.setIcon(new ImageIcon("D:\\GitRepos\\Eclipse\\PassGen\\img\\page_copy.png"));
+		btnCopy.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnCopy.setPreferredSize(new Dimension(89, 20));
+		btnCopy.setBounds(319, 24, 35, 35);
+		btnCopy.addActionListener(actCopyBtn);
+		panel.add(btnCopy);
+		
+		JLabel label = new JLabel("\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438");
+		JPanel panel_1 = new JPanel();
+		JSpinner spinner = new JSpinner();
+		JLabel LabelPassLong = new JLabel("\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F");
+		
 		panel.setLayout(null);
 		
 		frame = new JFrame();
@@ -62,27 +90,23 @@ public class Window {
 		frame.setResizable(false);
 		frame.setContentPane(panel);
 		
-		textFieldPass = new JTextField();
+		
 		textFieldPass.setFocusable(false);
 		textFieldPass.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		textFieldPass.setBounds(10, 24, 299, 35);
 		panel.add(textFieldPass);
 		textFieldPass.setColumns(10);
 		
-		JButton btnGeneration = new JButton("\u0413\u0435\u043D\u0435\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C");
+		
 		btnGeneration.setFont(new Font("Century Gothic", Font.BOLD, 18));
 		btnGeneration.setActionCommand("");
 		btnGeneration.setBounds(10, 70, 344, 35);
 		panel.add(btnGeneration);
 		
-		JButton btnCopy = new JButton("");
-		btnCopy.setIcon(new ImageIcon("D:\\GitRepos\\Eclipse\\PassGen\\img\\page_copy.png"));
-		btnCopy.setHorizontalTextPosition(SwingConstants.CENTER);
-		btnCopy.setPreferredSize(new Dimension(89, 20));
-		btnCopy.setBounds(319, 24, 35, 35);
-		panel.add(btnCopy);
 		
-		JLabel label = new JLabel("\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438");
+		
+		
+		
 		label.setOpaque(true);
 		label.setBounds(20, 106, 68, 19);
 		panel.add(label);
@@ -91,7 +115,7 @@ public class Window {
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setHorizontalTextPosition(SwingConstants.LEADING);
 		
-		JPanel panel_1 = new JPanel();
+		
 		panel_1.setBounds(10, 116, 344, 296);
 		panel.add(panel_1);
 		panel_1.setFont(new Font("Century Gothic", Font.PLAIN, 12));
@@ -101,7 +125,7 @@ public class Window {
 		panel_1.setForeground(Color.BLACK);
 		panel_1.setLayout(null);
 		
-		JSpinner spinner = new JSpinner();
+		
 		spinner.setModel(new SpinnerNumberModel(7, 6, 12, 1));
 		spinner.setFont(new Font("Century Gothic", Font.BOLD, 12));
 		spinner.setRequestFocusEnabled(false);
@@ -110,7 +134,7 @@ public class Window {
 		spinner.setBounds(124, 12, 43, 20);
 		panel_1.add(spinner);
 		
-		JLabel LabelPassLong = new JLabel("\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F");
+
 		LabelPassLong.setFont(new Font("Century Gothic", Font.BOLD, 12));
 		LabelPassLong.setBounds(25, 11, 101, 20);
 		panel_1.add(LabelPassLong);
@@ -165,10 +189,10 @@ public class Window {
 		textFieldRequiredSymbol.setBounds(25, 265, 290, 20);
 		panel_1.add(textFieldRequiredSymbol);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("New check box");
-		chckbxNewCheckBox.setSelected(true);
-		chckbxNewCheckBox.setBounds(25, 40, 20, 20);
-		panel_1.add(chckbxNewCheckBox);
+		
+		chckbxNumber.setSelected(true);
+		chckbxNumber.setBounds(25, 40, 20, 20);
+		panel_1.add(chckbxNumber);
 		
 		JCheckBox checkBox = new JCheckBox("New check box");
 		checkBox.setSelected(true);

@@ -6,6 +6,5 @@
 	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.46.0.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-java-2.46.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/shpak_sv/Desktop/launch4j.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

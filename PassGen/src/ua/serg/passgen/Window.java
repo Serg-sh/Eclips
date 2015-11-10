@@ -18,16 +18,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 
 public class Window {
 
 	private JFrame frame;
 	JTextField textFieldPass;
-	JTextField textFieldOnlySymbol;
 	JTextField textFieldRequiredSymbol;
 	JSpinner spinner = new JSpinner();
 	JCheckBox chckbxNumber = new JCheckBox("");
+	JCheckBox checkBoxEnLett = new JCheckBox("");
+	JCheckBox checkBoxEnCapLett = new JCheckBox("");
+	JCheckBox checkBoxRuLett = new JCheckBox("");
+	JCheckBox checkBoxRuCapLett = new JCheckBox("");
+	JCheckBox checkBoxAbcd12 = new JCheckBox("");
+	
 	
 	/**
 	 * Action Listener
@@ -80,19 +87,19 @@ public class Window {
 		
 		JLabel label = new JLabel("\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438");
 		JPanel panel_1 = new JPanel();
-		JSpinner spinner = new JSpinner();
+		
 		JLabel LabelPassLong = new JLabel("\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F");
 		
 		panel.setLayout(null);
 		
 		frame = new JFrame();
-		frame.setTitle("\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u043F\u0430\u0440\u043E\u043B\u0435\u0439");
+		frame.setTitle("\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u043F\u0430\u0440\u043E\u043B\u0435\u0439 \u0432\u0435\u0440. 0.1");
 		frame.setResizable(false);
 		frame.setContentPane(panel);
 		
 		
 		textFieldPass.setFocusable(false);
-		textFieldPass.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		textFieldPass.setFont(new Font("Century Gothic", Font.BOLD, 18));
 		textFieldPass.setBounds(10, 24, 299, 35);
 		panel.add(textFieldPass);
 		textFieldPass.setColumns(10);
@@ -126,7 +133,7 @@ public class Window {
 		panel_1.setLayout(null);
 		
 		
-		spinner.setModel(new SpinnerNumberModel(7, 6, 12, 1));
+		spinner.setModel(new SpinnerNumberModel(8, 6, 12, 1));
 		spinner.setFont(new Font("Century Gothic", Font.BOLD, 12));
 		spinner.setRequestFocusEnabled(false);
 		spinner.setFocusable(false);
@@ -139,10 +146,10 @@ public class Window {
 		LabelPassLong.setBounds(25, 11, 101, 20);
 		panel_1.add(LabelPassLong);
 		
-		JLabel labelInt09 = new JLabel("\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0446\u0438\u0444\u0440\u044B (0 - 9)");
-		labelInt09.setFont(new Font("Century Gothic", Font.BOLD, 12));
-		labelInt09.setBounds(55, 40, 172, 20);
-		panel_1.add(labelInt09);
+		JLabel labelINum09 = new JLabel("\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0446\u0438\u0444\u0440\u044B (0 - 9)");
+		labelINum09.setFont(new Font("Century Gothic", Font.BOLD, 12));
+		labelINum09.setBounds(55, 40, 172, 20);
+		panel_1.add(labelINum09);
 		
 		JLabel labelEnLett = new JLabel("\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0441\u0442\u0440\u043E\u0447\u043D\u044B\u0435 \u043B\u0430\u0442\u0438\u043D\u0441\u043A\u0438\u0435 (a - z)");
 		labelEnLett.setFont(new Font("Century Gothic", Font.BOLD, 12));
@@ -169,7 +176,7 @@ public class Window {
 		labelSymbol.setBounds(55, 165, 279, 20);
 		panel_1.add(labelSymbol);
 		
-		JLabel labelOnlySymbol = new JLabel("\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E:");
+		JLabel labelOnlySymbol = new JLabel("\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0448\u0430\u0431\u043B\u043E\u043D:");
 		labelOnlySymbol.setFont(new Font("Century Gothic", Font.BOLD, 12));
 		labelOnlySymbol.setBounds(55, 190, 279, 20);
 		panel_1.add(labelOnlySymbol);
@@ -179,50 +186,56 @@ public class Window {
 		labelRequiredSymbol.setBounds(55, 240, 279, 20);
 		panel_1.add(labelRequiredSymbol);
 		
-		textFieldOnlySymbol = new JTextField();
-		textFieldOnlySymbol.setBounds(25, 215, 290, 20);
-		panel_1.add(textFieldOnlySymbol);
-		textFieldOnlySymbol.setColumns(10);
-		
 		textFieldRequiredSymbol = new JTextField();
+		textFieldRequiredSymbol.setEnabled(false);
+		textFieldRequiredSymbol.setEditable(false);
 		textFieldRequiredSymbol.setColumns(10);
 		textFieldRequiredSymbol.setBounds(25, 265, 290, 20);
 		panel_1.add(textFieldRequiredSymbol);
-		
-		
-		chckbxNumber.setSelected(true);
+		chckbxNumber.setEnabled(false);
 		chckbxNumber.setBounds(25, 40, 20, 20);
 		panel_1.add(chckbxNumber);
+		checkBoxEnLett.setEnabled(false);
+		checkBoxEnLett.setBounds(25, 65, 20, 20);
+		panel_1.add(checkBoxEnLett);
+		checkBoxEnCapLett.setEnabled(false);
+		checkBoxEnCapLett.setBounds(25, 90, 20, 20);
+		panel_1.add(checkBoxEnCapLett);
+		checkBoxRuLett.setEnabled(false);
 		
-		JCheckBox checkBox = new JCheckBox("New check box");
-		checkBox.setSelected(true);
-		checkBox.setBounds(25, 65, 20, 20);
-		panel_1.add(checkBox);
 		
-		JCheckBox checkBox_1 = new JCheckBox("New check box");
-		checkBox_1.setSelected(true);
-		checkBox_1.setBounds(25, 90, 20, 20);
-		panel_1.add(checkBox_1);
+		checkBoxRuLett.setBounds(25, 115, 20, 20);
+		panel_1.add(checkBoxRuLett);
+		checkBoxRuCapLett.setEnabled(false);
 		
-		JCheckBox checkBox_2 = new JCheckBox("New check box");
-		checkBox_2.setBounds(25, 115, 20, 20);
-		panel_1.add(checkBox_2);
 		
-		JCheckBox checkBox_3 = new JCheckBox("New check box");
-		checkBox_3.setBounds(25, 140, 20, 20);
-		panel_1.add(checkBox_3);
+		checkBoxRuCapLett.setBounds(25, 140, 20, 20);
+		panel_1.add(checkBoxRuCapLett);
 		
 		JCheckBox checkBox_4 = new JCheckBox("New check box");
+		checkBox_4.setEnabled(false);
 		checkBox_4.setBounds(25, 165, 20, 20);
 		panel_1.add(checkBox_4);
+		checkBoxAbcd12.setEnabled(false);
 		
-		JCheckBox checkBox_5 = new JCheckBox("New check box");
-		checkBox_5.setBounds(25, 190, 20, 20);
-		panel_1.add(checkBox_5);
+		
+		checkBoxAbcd12.setActionCommand("");
+		checkBoxAbcd12.setSelected(true);
+		checkBoxAbcd12.setBounds(25, 190, 20, 20);
+		panel_1.add(checkBoxAbcd12);
 		
 		JCheckBox checkBox_6 = new JCheckBox("New check box");
+		checkBox_6.setEnabled(false);
 		checkBox_6.setBounds(25, 240, 20, 20);
 		panel_1.add(checkBox_6);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setEnabled(false);
+		comboBox.setFocusable(false);
+		comboBox.setFont(new Font("Century Gothic", Font.BOLD, 14));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Abcd12......", "1234ABc....."}));
+		comboBox.setBounds(25, 215, 290, 20);
+		panel_1.add(comboBox);
 		
 		JPanel panelSetings = new JPanel();
 		panelSetings.setFont(new Font("Tahoma", Font.BOLD, 14));

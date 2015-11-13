@@ -17,7 +17,6 @@ public class ActionCopyBtn implements ActionListener{
 		this.parrent = parrent;
 	}
 
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		copyToClipboard();

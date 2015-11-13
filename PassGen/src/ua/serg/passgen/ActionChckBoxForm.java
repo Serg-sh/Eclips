@@ -12,7 +12,6 @@ Window parrent;
 		this.parrent = parrent;
 	}
 
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

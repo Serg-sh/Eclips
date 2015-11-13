@@ -20,7 +20,6 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ButtonGroup;
 
 
 public class Window {
@@ -35,9 +34,7 @@ public class Window {
 	JCheckBox checkBoxRuCapLett = new JCheckBox("");
 	JCheckBox checkBoxSymbol = new JCheckBox("");
 	JCheckBox checkBoxAbcd12 = new JCheckBox("");
-	JComboBox comboBox = new JComboBox();
-	
-	
+	JComboBox<String> comboBox = new JComboBox<String>();
 	
 	/**
 	 * Action Listener
@@ -83,7 +80,7 @@ public class Window {
 		btnGeneration.addActionListener(actButtGen);
 		
 		JButton btnCopy = new JButton("");
-		btnCopy.setIcon(new ImageIcon("D:\\GitRepos\\Eclipse\\PassGen\\img\\page_copy.png"));
+		btnCopy.setIcon(new ImageIcon("img\\page_copy.png"));
 		btnCopy.setHorizontalTextPosition(SwingConstants.CENTER);
 		btnCopy.setPreferredSize(new Dimension(89, 20));
 		btnCopy.setBounds(319, 24, 35, 35);
@@ -98,10 +95,9 @@ public class Window {
 		panel.setLayout(null);
 		
 		frame = new JFrame();
-		frame.setTitle("\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u043F\u0430\u0440\u043E\u043B\u0435\u0439 \u0432\u0435\u0440. 0.1");
+		frame.setTitle("\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u043F\u0430\u0440\u043E\u043B\u0435\u0439 \u0432\u0435\u0440. 1.2");
 		frame.setResizable(false);
 		frame.setContentPane(panel);
-		
 		
 		textFieldPass.setFocusable(false);
 		textFieldPass.setFont(new Font("Century Gothic", Font.BOLD, 18));
@@ -109,15 +105,10 @@ public class Window {
 		panel.add(textFieldPass);
 		textFieldPass.setColumns(10);
 		
-		
 		btnGeneration.setFont(new Font("Century Gothic", Font.BOLD, 18));
 		btnGeneration.setActionCommand("");
 		btnGeneration.setBounds(10, 70, 344, 35);
 		panel.add(btnGeneration);
-		
-		
-		
-		
 		
 		label.setOpaque(true);
 		label.setBounds(20, 106, 68, 19);
@@ -126,7 +117,6 @@ public class Window {
 		label.setDisplayedMnemonic(KeyEvent.VK_ACCEPT);
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setHorizontalTextPosition(SwingConstants.LEADING);
-		
 		
 		panel_1.setBounds(10, 116, 344, 249);
 		panel.add(panel_1);
@@ -137,7 +127,6 @@ public class Window {
 		panel_1.setForeground(Color.BLACK);
 		panel_1.setLayout(null);
 		
-		
 		spinner.setModel(new SpinnerNumberModel(8, 6, 12, 1));
 		spinner.setFont(new Font("Century Gothic", Font.BOLD, 12));
 		spinner.setRequestFocusEnabled(false);
@@ -146,7 +135,6 @@ public class Window {
 		spinner.setBounds(124, 12, 43, 20);
 		panel_1.add(spinner);
 		
-
 		LabelPassLong.setFont(new Font("Century Gothic", Font.BOLD, 12));
 		LabelPassLong.setBounds(25, 11, 101, 20);
 		panel_1.add(LabelPassLong);
@@ -203,11 +191,9 @@ public class Window {
 		checkBoxRuLett.addActionListener(actChckBox);
 		panel_1.add(checkBoxRuLett);
 		
-		
 		checkBoxRuCapLett.setBounds(25, 140, 20, 20);
 		checkBoxRuCapLett.addActionListener(actChckBox);
 		panel_1.add(checkBoxRuCapLett);
-		
 		
 		checkBoxSymbol.setActionCommand("");
 		checkBoxSymbol.setBounds(25, 165, 20, 20);
@@ -220,10 +206,9 @@ public class Window {
 		checkBoxAbcd12.addActionListener(actChckBoxForm);
 		panel_1.add(checkBoxAbcd12);
 		
-		
 		comboBox.setFocusable(false);
 		comboBox.setFont(new Font("Century Gothic", Font.BOLD, 14));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Abcd12......", "123ABc......"}));
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Abcd12......", "123ABc......"}));
 		comboBox.setBounds(25, 215, 290, 20);
 		panel_1.add(comboBox);
 		

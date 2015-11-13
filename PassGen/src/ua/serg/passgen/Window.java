@@ -35,6 +35,7 @@ public class Window {
 	JCheckBox checkBoxRuCapLett = new JCheckBox("");
 	JCheckBox checkBoxSymbol = new JCheckBox("");
 	JCheckBox checkBoxAbcd12 = new JCheckBox("");
+	JComboBox comboBox = new JComboBox();
 	
 	
 	
@@ -219,7 +220,7 @@ public class Window {
 		checkBoxAbcd12.addActionListener(actChckBoxForm);
 		panel_1.add(checkBoxAbcd12);
 		
-		JComboBox comboBox = new JComboBox();
+		
 		comboBox.setFocusable(false);
 		comboBox.setFont(new Font("Century Gothic", Font.BOLD, 14));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Abcd12......", "123ABc......"}));

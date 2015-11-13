@@ -20,20 +20,22 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ButtonGroup;
 
 
 public class Window {
 
 	private JFrame frame;
 	JTextField textFieldPass;
-	JTextField textFieldRequiredSymbol;
 	JSpinner spinner = new JSpinner();
 	JCheckBox chckbxNumber = new JCheckBox("");
 	JCheckBox checkBoxEnLett = new JCheckBox("");
 	JCheckBox checkBoxEnCapLett = new JCheckBox("");
 	JCheckBox checkBoxRuLett = new JCheckBox("");
 	JCheckBox checkBoxRuCapLett = new JCheckBox("");
+	JCheckBox checkBoxSymbol = new JCheckBox("");
 	JCheckBox checkBoxAbcd12 = new JCheckBox("");
+	
 	
 	
 	/**
@@ -42,6 +44,8 @@ public class Window {
 	
 	ActionButtGen actButtGen = new ActionButtGen(this);
 	ActionCopyBtn actCopyBtn = new ActionCopyBtn(this);
+	ActionChckBox actChckBox = new ActionChckBox(this);
+	ActionChckBoxForm actChckBoxForm = new ActionChckBoxForm(this);
 	
 
 	/**
@@ -123,7 +127,7 @@ public class Window {
 		label.setHorizontalTextPosition(SwingConstants.LEADING);
 		
 		
-		panel_1.setBounds(10, 116, 344, 296);
+		panel_1.setBounds(10, 116, 344, 249);
 		panel.add(panel_1);
 		panel_1.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		panel_1.setToolTipText("");
@@ -181,59 +185,44 @@ public class Window {
 		labelOnlySymbol.setBounds(55, 190, 279, 20);
 		panel_1.add(labelOnlySymbol);
 		
-		JLabel labelRequiredSymbol = new JLabel("\u041E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u0441\u0438\u043C\u0432\u043E\u043B\u044B:");
-		labelRequiredSymbol.setFont(new Font("Century Gothic", Font.BOLD, 12));
-		labelRequiredSymbol.setBounds(55, 240, 279, 20);
-		panel_1.add(labelRequiredSymbol);
-		
-		textFieldRequiredSymbol = new JTextField();
-		textFieldRequiredSymbol.setEnabled(false);
-		textFieldRequiredSymbol.setEditable(false);
-		textFieldRequiredSymbol.setColumns(10);
-		textFieldRequiredSymbol.setBounds(25, 265, 290, 20);
-		panel_1.add(textFieldRequiredSymbol);
-		chckbxNumber.setEnabled(false);
 		chckbxNumber.setBounds(25, 40, 20, 20);
+		chckbxNumber.addActionListener(actChckBox);
 		panel_1.add(chckbxNumber);
-		checkBoxEnLett.setEnabled(false);
+		
 		checkBoxEnLett.setBounds(25, 65, 20, 20);
+		checkBoxEnLett.addActionListener(actChckBox);
 		panel_1.add(checkBoxEnLett);
-		checkBoxEnCapLett.setEnabled(false);
+		
 		checkBoxEnCapLett.setBounds(25, 90, 20, 20);
+		checkBoxEnCapLett.addActionListener(actChckBox);
 		panel_1.add(checkBoxEnCapLett);
-		checkBoxRuLett.setEnabled(false);
 		
 		
 		checkBoxRuLett.setBounds(25, 115, 20, 20);
+		checkBoxRuLett.addActionListener(actChckBox);
 		panel_1.add(checkBoxRuLett);
-		checkBoxRuCapLett.setEnabled(false);
 		
 		
 		checkBoxRuCapLett.setBounds(25, 140, 20, 20);
+		checkBoxRuCapLett.addActionListener(actChckBox);
 		panel_1.add(checkBoxRuCapLett);
 		
-		JCheckBox checkBox_4 = new JCheckBox("New check box");
-		checkBox_4.setEnabled(false);
-		checkBox_4.setBounds(25, 165, 20, 20);
-		panel_1.add(checkBox_4);
-		checkBoxAbcd12.setEnabled(false);
 		
+		checkBoxSymbol.setActionCommand("");
+		checkBoxSymbol.setBounds(25, 165, 20, 20);
+		checkBoxSymbol.addActionListener(actChckBox);
+		panel_1.add(checkBoxSymbol);
 		
-		checkBoxAbcd12.setActionCommand("");
 		checkBoxAbcd12.setSelected(true);
+		checkBoxAbcd12.setActionCommand("");
 		checkBoxAbcd12.setBounds(25, 190, 20, 20);
+		checkBoxAbcd12.addActionListener(actChckBoxForm);
 		panel_1.add(checkBoxAbcd12);
 		
-		JCheckBox checkBox_6 = new JCheckBox("New check box");
-		checkBox_6.setEnabled(false);
-		checkBox_6.setBounds(25, 240, 20, 20);
-		panel_1.add(checkBox_6);
-		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setEnabled(false);
 		comboBox.setFocusable(false);
 		comboBox.setFont(new Font("Century Gothic", Font.BOLD, 14));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Abcd12......", "1234ABc....."}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Abcd12......", "123ABc......"}));
 		comboBox.setBounds(25, 215, 290, 20);
 		panel_1.add(comboBox);
 		
@@ -244,7 +233,7 @@ public class Window {
 		panelSetings.setAlignmentY(Component.TOP_ALIGNMENT);
 		panelSetings.setAlignmentX(Component.LEFT_ALIGNMENT);
 		panelSetings.setLayout(null);
-		frame.setBounds(100, 100, 370, 451);
+		frame.setBounds(100, 100, 370, 405);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}

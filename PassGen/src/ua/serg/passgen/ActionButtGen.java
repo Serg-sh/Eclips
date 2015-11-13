@@ -17,61 +17,37 @@ public class ActionButtGen implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		char[] chArr = new char[(int) parrent.spinner.getValue()];
-//		condition();
+		char[] arrPassword = chArrPassLength();
+		
+		condition(arrPassword);
+		
+		
+		parrent.textFieldPass.setText(String.valueOf(arrPassword));
+	}
+	
+	private char genRandom (char[] arr){
+		int i = (int)((Math.random()) * arr.length);
+		return arr[i];
+	}
+	
+//	Определяет длину массива символов пароля
+	private char[] chArrPassLength() {
+		char[] arrPass = new char[(int) parrent.spinner.getValue()];
+		return arrPass;
+	}
+	
+//	условие по умолчанию шаблон
+	private void condition(char[] chArr) {
 		for (int i = 0; i < 1; i++){
-			chArr[i] = genRandom(65, 90);
+			chArr[i] = genRandom(SymbolForPass.ENCAPLETT);
 		}
 		for (int i = 1; i < 4; i++){
-			chArr[i] = genRandom(97, 122);
+			chArr[i] = genRandom(SymbolForPass.ENLETT);
 		}
 		for (int i = 4; i < chArr.length; i++){
-			chArr[i] = genRandom(48, 57);
+			chArr[i] = genRandom(SymbolForPass.NUM);
 		}
 		
-		parrent.textFieldPass.setText(String.valueOf(chArr));
-//		min =0;
-//		max =0;
 	}
-	
-	private char genRandom (int min, int max){
-		
-		return (char)(min +(int)((Math.random()) * ((max-min)+1)));
-					
-	}
-	
-//	private void condition() {
-//		
-//		else if (parrent.chckbxNumber.isSelected() & parrent.checkBoxEnLett.isSelected() & parrent.checkBoxEnCapLett.isSelected()){
-//			min = 48; 
-//			max = 122;
-//		}
-//	    else if (parrent.checkBoxRuCapLett.isSelected()& parrent.checkBoxRuLett.isSelected()){
-//			min = 1040; 
-//			max = 1103;
-//		}
-//	    else if (parrent.checkBoxRuCapLett.isSelected()){
-//			min = 1040; 
-//			max = 1071;
-//		}
-//	    else if (parrent.checkBoxRuLett.isSelected()){
-//			min = 1072; 
-//			max = 1103;
-//		}
-//	    else if (parrent.checkBoxEnCapLett.isSelected()){
-//			min = 65; 
-//			max = 90;
-//		}
-//		else if (parrent.checkBoxEnLett.isSelected()){
-//			min = 97; 
-//			max = 122;
-//		}
-//		
-//		else if (parrent.chckbxNumber.isSelected()){
-//			min = 48; 
-//			max = 57;
-//			}
-//		
-//	}
 
 }

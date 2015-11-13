@@ -80,7 +80,7 @@ public class Window {
 		btnGeneration.addActionListener(actButtGen);
 		
 		JButton btnCopy = new JButton("");
-		btnCopy.setIcon(new ImageIcon("img\\page_copy.png"));
+		btnCopy.setIcon(new ImageIcon("src\\ua\\serg\\passgen\\page_copy.png"));
 		btnCopy.setHorizontalTextPosition(SwingConstants.CENTER);
 		btnCopy.setPreferredSize(new Dimension(89, 20));
 		btnCopy.setBounds(319, 24, 35, 35);

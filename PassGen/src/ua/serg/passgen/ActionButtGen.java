@@ -107,7 +107,7 @@ public class ActionButtGen implements ActionListener {
 			for (int i = 4; i<exitArr.length;i++){
 				exitArr[i] = genRandom(SymbolForPass.NUM);
 			}
-		}else {
+		}else if((parrent.comboBox.getSelectedItem()).equals("123ABc......")) {
 			for (int i =0; i<3;i++){
 				exitArr[i] = genRandom(SymbolForPass.NUM);
 			}

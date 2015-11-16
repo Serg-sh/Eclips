@@ -44,6 +44,7 @@ public class Window {
 	ActionCopyBtn actCopyBtn = new ActionCopyBtn(this);
 	ActionChckBox actChckBox = new ActionChckBox(this);
 	ActionChckBoxForm actChckBoxForm = new ActionChckBoxForm(this);
+	private final JLabel authorLabel = new JLabel("Developer by Sergey Shpak");
 	
 
 	/**
@@ -211,6 +212,10 @@ public class Window {
 		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Abcd12......", "123ABc......"}));
 		comboBox.setBounds(25, 215, 290, 20);
 		panel_1.add(comboBox);
+		authorLabel.setForeground(Color.GRAY);
+		authorLabel.setFont(new Font("Century Gothic", Font.PLAIN, 8));
+		authorLabel.setBounds(256, 367, 108, 9);
+		panel.add(authorLabel);
 		
 		JPanel panelSetings = new JPanel();
 		panelSetings.setFont(new Font("Tahoma", Font.BOLD, 14));

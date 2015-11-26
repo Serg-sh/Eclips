@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Arrays/src"/>
+	<classpathentry kind="src" path="Communalka/src"/>
+	<classpathentry kind="src" path="Deal/src"/>
+	<classpathentry kind="src" path="File/src"/>
+	<classpathentry kind="src" path="MyCalculator/src"/>
+	<classpathentry kind="src" path="PassGen/src"/>
+	<classpathentry kind="src" path="SeleniumTests/src"/>
+	<classpathentry kind="src" path="Test/src"/>
+	<classpathentry kind="lib" path="Communalka/forms-1.3.0.jar"/>
+	<classpathentry kind="lib" path="Communalka/miglayout15-swing.jar"/>
+	<classpathentry kind="lib" path="File/lib/commons-io-2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="File/lib/commons-io-2.4-sources.jar"/>
+	<classpathentry kind="lib" path="File/lib/commons-io-2.4-test-sources.jar"/>
+	<classpathentry kind="lib" path="File/lib/commons-io-2.4-tests.jar"/>
+	<classpathentry kind="lib" path="File/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="MyCalculator/forms-1.3.0.jar"/>
+	<classpathentry kind="lib" path="MyCalculator/miglayout15-swing.jar"/>
+	<classpathentry kind="lib" path="Test/forms-1.3.0.jar"/>
+	<classpathentry kind="lib" path="Test/lib/selenium-java-2.46.0.jar"/>
+	<classpathentry kind="lib" path="Test/lib/selenium-server-standalone-2.46.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="Arrays/bin"/>
+</classpath>

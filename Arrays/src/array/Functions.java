@@ -18,11 +18,11 @@ public class Functions {
 		System.out.println();
 		System.out.print("Имеем массив: ");
 		for (int i = 0; i < arr.length; i++) {
-			System.out.print(+arr[i] + " ");
+			System.out.print(arr[i] + " ");
 		}
 	}
 
-	static void outElemArrayChar(char[] arr) {
+	static void outElemArray(char[] arr) {
 		System.out.println();
 		System.out.print("Имеем массив: ");
 		for (int i = 0; i < arr.length; i++) {

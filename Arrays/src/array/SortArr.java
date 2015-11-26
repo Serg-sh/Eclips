@@ -12,7 +12,7 @@ public class SortArr {
 		Functions.outElemArray(arr1);
 		Functions.sort(arr1);
 		Functions.outElemArray(arr1);
-		Functions.outElemArrayChar(arr2);
+		Functions.outElemArray(arr2);
 		for (char c : arr3) {
 			System.out.println("Элемент "+ c + " находится в ячейке № "+Functions.findChar(arr2, c));
 		}
